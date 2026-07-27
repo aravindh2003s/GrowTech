@@ -1,0 +1,49 @@
+.process-section {
+  position: relative;
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-top: 4rem;
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .process-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.process-card {
+  padding: 3rem 2rem;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.process-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(236, 72, 153, 0.15);
+}
+
+.process-number {
+  font-size: 4rem;
+  font-weight: 800;
+  opacity: 0.5;
+  margin-bottom: 1rem;
+  line-height: 1;
+}
+
+.process-title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.process-description {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
