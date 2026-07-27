@@ -23,9 +23,9 @@ services:
       - key: JWT_SECRET
         generateValue: true
       
-      # Default Admin Credentials (you can change these in the Render dashboard later)
+      # Set your admin credentials directly in the Render Dashboard (not here!)
       - key: ADMIN_EMAIL
-        value: admin@growtech.com
+        sync: false
       
       - key: ADMIN_PASS
-        value: admin123
+        sync: false
