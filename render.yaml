@@ -1,0 +1,38 @@
+# render.yaml
+# This file automates the deployment of the backend and database on Render (Infrastructure as Code)
+# It tells Render exactly how to build, start, and connect your services.
+
+databases:
+  - name: growtech-db
+    databaseName: growtech
+    user: growtech_user
+    plan: free # Uses Render's free PostgreSQL tier
+
+services:
+  - type: web
+    name: growtech-backend
+    env: node
+    plan: free # Uses Render's free Web Service tier
+    rootDir: backend # Tells Render the backend is in the 'backend' folder
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      # Automatically connects this web service to the database created above
+      - key: DATABASE_URL
+        fromDatabase:
+          name: growtech-db
+          property: connectionString
+      
+      - key: PORT
+        value: "5000"
+      
+      # Generates a secure, random string for your JWT tokens automatically
+      - key: JWT_SECRET
+        generateValue: true
+      
+      # Default Admin Credentials (you can change these in the Render dashboard later)
+      - key: ADMIN_EMAIL
+        value: admin@growtech.com
+      
+      - key: ADMIN_PASS
+        value: admin123
