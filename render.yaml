@@ -12,6 +12,10 @@ services:
     buildCommand: npm install
     startCommand: npm start
     envVars:
+      # sync: false tells Render to keep the value you manually enter in the dashboard
+      - key: DATABASE_URL
+        sync: false
+        
       - key: PORT
         value: "5000"
       
