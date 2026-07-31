@@ -2,23 +2,33 @@
 
 :root {
   /* Soft Pastel Theme Palette */
-  --bg-primary: #EEF2ED; /* Soft Pistachio / Mint tint */
-  --bg-secondary: #FAFAF8; /* Pure-ish white for cards/layers */
-  --bg-tertiary: #E8EDE6; /* Slightly darker mint */
-  
-  --text-primary: #1C2A21; /* Deep Forest Charcoal */
-  --text-secondary: #5C6B62; /* Muted Sage */
-  --text-muted: #8E9C93;
+  --bg-primary: #1C2A21;
+  /* Deep Forest Charcoal for background */
+  --bg-secondary: #2D3E35;
+  /* Dark Slate Green for cards */
+  --bg-tertiary: #4B5E53;
+  /* Medium Slate Green */
 
-  --accent-primary: #D1E2C4; /* Pastel Matcha */
-  --accent-secondary: #F5D5CB; /* Soft Peach */
-  --accent-tertiary: #DCD6EA; /* Muted Lavender */
-  
-  --border-color: rgba(92, 107, 98, 0.15); /* Soft sage border */
+  --text-primary: #FFFFFF;
+  /* Pure white text */
+  --text-secondary: #E8EDE6;
+  /* Soft mint/white */
+  --text-muted: #D1E2C4;
+  /* Pastel Matcha for muted text */
+
+  --accent-primary: #D1E2C4;
+  /* Pastel Matcha */
+  --accent-secondary: #F5D5CB;
+  /* Soft Peach */
+  --accent-tertiary: #DCD6EA;
+  /* Muted Lavender */
+
+  --border-color: rgba(92, 107, 98, 0.15);
+  /* Soft sage border */
   --border-radius-sm: 16px;
   --border-radius-md: 24px;
   --border-radius-lg: 32px;
-  
+
   --spacing-sm: 0.5rem;
   --spacing-md: 1rem;
   --spacing-lg: 2rem;
@@ -48,10 +58,16 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-heading);
   line-height: 1.1;
-  font-weight: 500; /* Fraunces looks great at slightly lighter weights */
+  font-weight: 500;
+  /* Fraunces looks great at slightly lighter weights */
   letter-spacing: -0.01em;
   color: var(--text-primary);
 }
@@ -66,7 +82,10 @@ a:hover {
   opacity: 0.8;
 }
 
-a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
   outline: 2px solid var(--text-secondary);
   outline-offset: 4px;
   border-radius: var(--border-radius-sm);
@@ -91,7 +110,7 @@ button {
 /* Redefined gradient text to be solid text or softer gradient */
 .text-gradient {
   color: var(--text-primary);
-  background: linear-gradient(135deg, #1C2A21, #5C6B62);
+  background: linear-gradient(135deg, #FFFFFF, #D1E2C4);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -116,7 +135,8 @@ button {
   background: var(--text-primary);
   color: var(--bg-primary);
   padding: 14px 32px;
-  border-radius: 9999px; /* Pill shape */
+  border-radius: 9999px;
+  /* Pill shape */
   font-weight: 500;
   font-size: 1rem;
   letter-spacing: 0.2px;
@@ -136,7 +156,8 @@ button {
   color: var(--text-primary);
   border: 1px solid transparent;
   padding: 14px 32px;
-  border-radius: 9999px; /* Pill shape */
+  border-radius: 9999px;
+  /* Pill shape */
   font-weight: 500;
   font-size: 1rem;
   box-shadow: 0 4px 14px 0 rgba(209, 226, 196, 0.4);
@@ -150,20 +171,46 @@ button {
 
 /* Animations - Softer */
 @keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-6px); }
-  100% { transform: translateY(0px); }
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
 }
 
 @keyframes pulse-glow {
-  0% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.02); opacity: 0.9; }
-  100% { transform: scale(1); opacity: 1; }
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.02);
+    opacity: 0.9;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 @keyframes fade-in-up {
-  from { opacity: 0; transform: translateY(15px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .animate-float {
@@ -171,7 +218,8 @@ button {
 }
 
 .animate-pulse {
-  animation: pulse-glow 4s ease-in-out infinite; /* Replaced glow with a soft breathing effect */
+  animation: pulse-glow 4s ease-in-out infinite;
+  /* Replaced glow with a soft breathing effect */
 }
 
 .animate-fade-in-up {
@@ -204,12 +252,27 @@ button {
 }
 
 .section-padding {
-  padding: 8rem 0; /* Increase padding for breathability */
+  padding: 8rem 0;
+  /* Increase padding for breathability */
 }
 
 /* Tailwind Class Overrides for Pastel Theme */
-.text-white, .text-gray-300 { color: var(--text-primary) !important; }
-.text-gray-400, .text-gray-500, .text-muted { color: var(--text-secondary) !important; }
-.text-blue-400 { color: var(--text-primary) !important; }
-.bg-gray-800, .bg-gray-900 { background: var(--bg-tertiary) !important; }
+.text-white,
+.text-gray-300 {
+  color: var(--text-primary) !important;
+}
 
+.text-gray-400,
+.text-gray-500,
+.text-muted {
+  color: var(--text-secondary) !important;
+}
+
+.text-blue-400 {
+  color: var(--text-primary) !important;
+}
+
+.bg-gray-800,
+.bg-gray-900 {
+  background: var(--bg-tertiary) !important;
+}
