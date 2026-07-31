@@ -44,7 +44,7 @@ export default function TechnologyExplorer() {
           >
             <div className="flex justify-between items-center mb-3">
               <h4 className="text-xl font-bold text-white">{activeTech.name}</h4>
-              <span className="text-xs bg-gray-800 text-gray-300 px-2 py-1 rounded">{activeTech.type}</span>
+              <span className="text-xs px-2 py-1 rounded" style={{ background: 'var(--accent-primary)', color: 'var(--text-primary)' }}>{activeTech.type}</span>
             </div>
             <p className="text-gray-400">{activeTech.desc}</p>
             

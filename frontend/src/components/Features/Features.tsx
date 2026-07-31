@@ -54,9 +54,9 @@ export default function Features() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.2, duration: 0.5 }}
-              whileHover={{ y: -10, boxShadow: '0 10px 30px rgba(59, 130, 246, 0.2)' }}
+              whileHover={{ y: -10, boxShadow: '0 10px 30px rgba(28, 42, 33, 0.08)' }}
             >
-              <div className="feature-icon" style={{ marginBottom: '1.5rem', display: 'inline-block', padding: '1rem', background: 'rgba(255,255,255,0.05)', borderRadius: '12px' }}>
+              <div className="feature-icon" style={{ marginBottom: '1.5rem', display: 'inline-block', padding: '1rem', background: 'var(--bg-tertiary)', borderRadius: '12px' }}>
                 {feature.icon}
               </div>
               <h3>{feature.title}</h3>
